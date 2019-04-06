@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.yellowgg.mapper.CategoryMapper">
+
+    <select id="findAll" resultType="Category">
+        select * from t_category order by createtime desc
+    </select>
+
+    <select id="findTop" resultType="Category">
+        select * from t_category order by createtime desc limit 1
+    </select>
+
+    <select id="getCountOfCate" parameterType="Category" resultType="int">
+        select count(*) from t_category where categoryid = #{categoryid}
+    </select>
+
+
+
+    <select id="findCateIdByName" parameterType="Category" resultType="String">
+        select categoryid from t_category where categoryname = #{categoryname}
+    </select>
+
+    <update id="AddCountOfCate" parameterType="Category">
+        update t_category set count = count + 1 where categoryid = #{categoryid}
+    </update>
+
+    <insert id="addNewCate" parameterType="Category">
+        insert into t_category values (#{categoryid} ,#{categoryname}
+        ,#{count} ,#{createtime} )
+    </insert>
+
+</mapper>

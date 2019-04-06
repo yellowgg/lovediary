@@ -1,0 +1,142 @@
+/*搜索框处跟添加按钮*/
+div.search {
+    padding: 40px 0;
+}
+
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+
+.d7:after {
+    content: "";
+    clear: both;
+    display: table
+}
+
+.d7 form {
+    width: auto;
+    float: right;
+    margin-right: 50px;
+}
+
+.d7 input {
+    width: 200px;
+    height: 42px;
+    padding-left: 15px;
+    border-radius: 42px;
+    border: 2px solid #1380ab;
+    background: #f6f5ec;
+    outline: none;
+    position: relative;
+    transition: .3s linear;
+}
+
+.d7 input:focus {
+    width: 250px;
+}
+
+.d7 button {
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    position: absolute;
+    top: -2px;
+    border-radius: 42px;
+    right: 0;
+}
+
+.d7 button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    color: #1380ab;
+}
+
+.d7 .addDiary {
+    width: 42px;
+    height: 42px;
+    background: #f6f5ec;
+    border: 2px solid #1380ab;
+    position: absolute;
+    border-radius: 42px;
+    left: 100%;
+    padding: 0px;
+}
+
+.d7 .addDiary:before {
+    content: "\f067";
+    font-family: FontAwesome;
+    color: #1380ab;
+}
+
+/*日记列表*/
+.day {
+    min-height: 10px;
+    _height: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.dayTime {
+    width: 100%;
+    font-weight: bold;
+    line-height: 1.5em;
+    font-size: 200%;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    clear: both;
+    color: #1380ab;
+    border-bottom: 2px solid #f6f5ec;;
+    text-align: center;
+
+}
+
+.diaryTitle {
+    font-size: 110%;
+    font-weight: bold;
+    border-bottom: 1px solid #dddddd;
+    float: right;
+    line-height: 1.5em;
+    width: 100%;
+    clear: both;
+}
+
+.diaryTitle a:link, .postTitle a:visited, .postTitle a:active {
+    color: #1380ab;
+}
+
+.diaryTitle a:hover {
+    color: #016d9a;
+    text-decoration: none;
+}
+
+.diarySubtitle {
+    float: right;
+    line-height: 1.5em;
+    width: 100%;
+    clear: both;
+    padding: 10px 0;
+}
+
+.postDesc {
+    float: right;
+    width: 100%;
+    clear: both;
+    text-align: right;
+    padding-right: 5px;
+    color: #269a98;
+    margin-top: 5px;
+}
+
+.postDesc a:link, .postDesc a:visited, .postDesc a:active {
+    color: #666;
+}
+
+.postDesc a:hover {
+    color: #ff1f1a;
+    text-decoration: none;
+}
+
