@@ -6,10 +6,10 @@ import cn.yellowgg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.context.ContextLoader;
+import org.springframework.web.context.WebApplicationContext;
 
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.ServletContext;
 import java.util.Date;
 
 /**
@@ -23,13 +23,12 @@ public class UpdateLoveDayTask {
     @Autowired
     UserService userService;
 
-
     @Scheduled(cron = "0 0 1 * * ?") //每天凌晨1点执行一次
     public void updateLoveDate() {
         try {
-            //获取request 线程安全
-            HttpServletRequest request = ((ServletRequestAttributes)
-                    (RequestContextHolder.currentRequestAttributes())).getRequest();
+            //获取servletContext
+            WebApplicationContext webApplicationContext = ContextLoader.getCurrentWebApplicationContext();
+            ServletContext servletContext = webApplicationContext.getServletContext();
 
             User currentUser = userService.findUserById("988a6718538e11e99b5f10c37b1e9938");
 
@@ -39,9 +38,9 @@ public class UpdateLoveDayTask {
 
             //放回application
             LoveDate loveDate = DateTimeUtils.CalculateTheUseYaers(loveday, nowDay);
-            request.getServletContext().setAttribute("loveYear", loveDate.getYear());
-            request.getServletContext().setAttribute("loveMonth", loveDate.getMonth());
-            request.getServletContext().setAttribute("loveDay", loveDate.getDay());
+            servletContext.setAttribute("loveYear", loveDate.getYear());
+            servletContext.setAttribute("loveMonth", loveDate.getMonth());
+            servletContext.setAttribute("loveDay", loveDate.getDay());
 
         } catch (Exception e) {
             e.printStackTrace();
