@@ -23,7 +23,7 @@ public class UpdateLoveDayTask {
     @Autowired
     UserService userService;
 
-    @Scheduled(cron = "0 0 1 * * ?") //每天凌晨1点执行一次
+    @Scheduled(cron = "0 0 */6 * * ?") //每个6小时执行一次
     public void updateLoveDate() {
         try {
             //获取servletContext
