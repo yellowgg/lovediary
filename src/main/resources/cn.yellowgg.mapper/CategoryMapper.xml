@@ -12,9 +12,8 @@
     </select>
 
     <select id="getCountOfCate" parameterType="Category" resultType="int">
-        select count(*) from t_category where categoryid = #{categoryid}
+        select count from t_category where categoryid = #{categoryid}
     </select>
-
 
 
     <select id="findCateIdByName" parameterType="Category" resultType="String">
