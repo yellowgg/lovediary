@@ -63,10 +63,12 @@
                     <div class="col-md-4">
                         <div class="bridecol">
                             <div class="bridepic">
-                                <img src="<%=basePath%>/images/girl.jpg"
-                                     alt="bride"
-                                     width="160"
-                                     height="160">
+                                <a href="http://yellowgg.cn:8080/HT/">
+                                    <img src="<%=basePath%>/images/girl.jpg"
+                                         alt="bride"
+                                         width="160"
+                                         height="160">
+                                </a>
                             </div>
                             <div class="brideinfo">
                                 <h3>${girlname}</h3>
@@ -77,10 +79,12 @@
                     <div class="col-md-4">
                         <div class="groomcol">
                             <div class="groompic">
-                                <img src="<%=basePath%>/images/boy.jpg"
-                                     alt="groom"
-                                     width="160"
-                                     height="160">
+                                <a href="http://yellowgg.cn:8080/HG/">
+                                    <img src="<%=basePath%>/images/boy.jpg"
+                                         alt="groom"
+                                         width="160"
+                                         height="160">
+                                </a>
                             </div>
                             <div class="groominfo">
                                 <h3>${boyname}</h3>
