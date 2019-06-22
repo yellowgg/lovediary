@@ -38,22 +38,7 @@
 <div style="width: 100%;height: 100%;position:fixed">
     <div id="st-container" class="st-container">
         <div class="st-pusher">
-            <nav class="st-menu st-effect-6" id="menu-6">
-                <h2 class="icon icon-stack">❤️关于我爱你❤️</h2>
-                <ul>
-                    <li><a href="<%=basePath%>">首页</a></li>
-                    <li><a href="<%=basePath%>/diary/list">日记</a></li>
-                    <li><a href="<%=basePath%>/user/setting">设置</a></li>
-                    <c:if test="${empty crrentUser}">
-                        <li><a href="<%=basePath%>/user/loginUI">登录</a></li>
-                    </c:if>
-                    <c:if test="${not empty crrentUser}">
-                        <li><a href="<%=basePath%>/user/logout">注销</a></li>
-                    </c:if>
-                    <li><a href="<%=basePath%>/other/playtheball">玩个球</a></li>
-                    <li><a href="<%=basePath%>/other/about">关于</a></li>
-                </ul>
-            </nav>
+            <%@ include file="navigation.jsp" %>
             <div class="st-content"
                  style="background-image: url('<%=basePath%>/images/bg.jpg');height:100%">
                 <div class="st-content-inner">
