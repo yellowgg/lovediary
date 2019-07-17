@@ -77,52 +77,12 @@
                         </div>
                     </div>
                     <div class="col-md-2"></div>
-                    <%--时间条--%>
-                    <div class="timer-box"
-                         style="border-bottom: 1px solid #efefef;">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h2 class="timehead">
-                                        我们已经在一起
-                                    </h2>
-                                    <div id="ctimer" style="margin-left: 36.5%">
-                                        <span> <h3>${loveYear}</h3> 年 </span>
-                                        <span> <h3>${loveMonth}</h3> 月 </span>
-                                        <span> <h3>${loveDay}</h3> 日 </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <%--时间条,使用静态包含--%>
+                    <%@ include file="weAlreadyWithTime.jsp" %>
                     <%--中间三部分--%>
                     <div class="col-md-12">
-                        <%--日志的搜索框和分类栏--%>
-                        <div id="diaryLeftSearchClassify" class="col-md-3"
-                             style="height: 100%">
-                            <%--搜索框--%>
-                            <div class="search d7">
-                                <form method="get"
-                                      action="<%=basePath%>/diary/searchlist">
-                                    <input type="text" name="searchKey"
-                                           maxlength="10"
-                                           placeholder="搜索日记内容╮(￣▽￣)╭">
-                                    <button type="submit"></button>
-                                    <button class="addDiary" type="button"
-                                            title="添加日记"
-                                            onclick="toAddDiary()">
-                                    </button>
-                                </form>
-                            </div>
-                            <%--日期分类--%>
-                            <div class="list-group" style="width: 100%"
-                                 id="c_ul">
-                                <a href="javascript:void(0);"
-                                   class="list-group-item disabled">
-                                    时间分类
-                                </a>
-                            </div>
-                        </div>
+                        <%--日志的搜索框和分类栏,已抽取，静态包含--%>
+                        <%@ include file="diaryLeft.jsp" %>
                         <%--日记列表--%>
                         <div id="diaryMiddleList" class="col-md-6"
                              style="height: 100%">
@@ -221,13 +181,8 @@
                                 <h1>空空如也</h1>
                             </c:if>
                         </div>
-                        <%--右边空白--%>
-                        <div id="diaryRightBlank" class="col-md-3"
-                             style="height: 100%">
-                            <img src="<%=basePath%>/images/baby.png" width="380"
-                                 class="img-responsive"
-                                 height="100%"/>
-                        </div>
+                        <%--右边空白,已抽取，静态包含--%>
+                        <%@include file="diaryRight.jsp" %>
                     </div>
                     <%--页脚--%>
                     <div class="col-md-12" align="center" style="border-top:
@@ -238,14 +193,8 @@
                                target="_blank">https://github.com/yellowgg</a>
                         </p>
                     </div>
-                    <%--返回顶部--%>
-                    <div id="gotop"
-                         style="position: fixed;bottom: 1px;right: 1px;">
-                        <a href="#top">
-                            <img src="<%=basePath%>/images/gotop.png"
-                                 width="150px"
-                                 height="150px" title="跟我窜回顶部"/></a>
-                    </div>
+                    <%--返回顶部,抽取静态包含--%>
+                    <%@include file="goTop.jsp" %>
                     <%--导航按钮--%>
                     <div class="main clearfix">
                         <div id="st-trigger-effects" class="column">
@@ -302,6 +251,8 @@
 <script src="<%=basePath%>/js/sidebarEffects.js"
         type="text/javascript"></script>
 <script src="<%=basePath%>/js/fontFloat.js" type="text/javascript"></script>
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script src="<%=basePath%>/js/kanbanniang.js" type="text/javascript"></script>
 </body>
 </html>
 
