@@ -36,7 +36,7 @@
         <div class="st-pusher">
             <%@ include file="navigation.jsp" %>
             <div class="st-content"
-                 style="background-image: url('<%=basePath%>/images/bg.jpg');height:100%">
+                 style="background: url('<%=basePath%>/images/bg.jpg') no-repeat center 0px;background-position: center 0;background-size: cover;height:100%">
                 <div class="st-content-inner">
                     <%--两个头像条--%>
                     <div class="col-md-2"></div>
