@@ -1,6 +1,7 @@
 package cn.yellowgg.controller;
 
 import cn.yellowgg.entity.Category;
+import cn.yellowgg.log.BaseLogger;
 import cn.yellowgg.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,7 +35,7 @@ public class CategoryController {
                 return categoryList;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            BaseLogger.ERROR_LOGGER.error("ajax请求日记分类失败", e);
         }
         return null;
     }

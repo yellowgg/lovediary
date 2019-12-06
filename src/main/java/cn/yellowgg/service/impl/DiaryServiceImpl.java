@@ -34,17 +34,12 @@ public class DiaryServiceImpl implements DiaryService {
                                              Category category) throws Exception {
         //1.创建pageBean
         PageBean<Diary> pd = new PageBean<>(pageNum, pageSize);
-
         //2.设置当前页数据
-        List<Diary> data = diaryMapper.findAllByCatePage(pd.getStartIndex(),
-                pageSize, category);
-
+        List<Diary> data = diaryMapper.findAllByCatePage(pd.getStartIndex(), pageSize, category);
         pd.setData(data);
-
         //3.设置总记录数
         int totalRecord = categoryMapper.getCountOfCate(category);
         pd.setTotalRecord(totalRecord);
-
         return pd;
     }
 
@@ -55,17 +50,12 @@ public class DiaryServiceImpl implements DiaryService {
     public PageBean<Diary> findAllByContentPage(Integer pageNum, Integer pageSize, Diary diary) throws Exception {
         //1.创建pageBean
         PageBean<Diary> pd = new PageBean<>(pageNum, pageSize);
-
         //2.设置当前页数据
-        List<Diary> data = diaryMapper.findAllByContentPage(pd.getStartIndex(),
-                pageSize, diary);
-
+        List<Diary> data = diaryMapper.findAllByContentPage(pd.getStartIndex(), pageSize, diary);
         pd.setData(data);
-
         //3.设置总记录数
         int totalRecord = diaryMapper.getCountOfSearchKey(diary);
         pd.setTotalRecord(totalRecord);
-
         return pd;
     }
 
@@ -118,7 +108,6 @@ public class DiaryServiceImpl implements DiaryService {
             category.setCount(0);
             category.setCreatetime(new Date());
             categoryMapper.addNewCate(category);
-
             //赋值
             diary.setCategoryid(category.getCategoryid());
         }

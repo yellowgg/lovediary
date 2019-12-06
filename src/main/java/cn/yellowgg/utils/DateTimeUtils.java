@@ -19,21 +19,15 @@ public class DateTimeUtils {
      * @param newDate
      * @return LoveDate 一个有年月日三个int变量的包装类
      */
-    public static LoveDate CalculateTheUseYaers(String oldDate, String newDate) {
+    public static LoveDate CalculateTheUseYaers(String oldDate, String newDate) throws Exception {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); // 创建日期格式
         Calendar c1 = Calendar.getInstance(); // 创建日历对象
         Calendar c2 = Calendar.getInstance();
-        try {
-            c1.setTime(sdf.parse(oldDate));
-            c2.setTime(sdf.parse(newDate));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        c1.setTime(sdf.parse(oldDate));
+        c2.setTime(sdf.parse(newDate));
         int years = c2.get(Calendar.YEAR) - c1.get(Calendar.YEAR); // 计算年度差
         int month = c2.get(Calendar.MONTH) - c1.get(Calendar.MONTH);// 计算月度差
         int day = c2.get(Calendar.DAY_OF_MONTH) - c1.get(Calendar.DAY_OF_MONTH);// 计算日数差 （DAY_OF_MONTH为月中的天数)
-
-
         if (day < 0) {
             month -= 1;
             day = day + 31;
@@ -42,12 +36,10 @@ public class DateTimeUtils {
             years -= 1;
             month = 12 + month;
         }
-
         LoveDate loveDate = new LoveDate();
         loveDate.setYear(years);
         loveDate.setMonth(month);
         loveDate.setDay(day);
-
         return loveDate;
     }
 

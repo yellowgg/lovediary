@@ -2,6 +2,7 @@ package cn.yellowgg.init;
 
 import cn.yellowgg.entity.LoveDate;
 import cn.yellowgg.entity.User;
+import cn.yellowgg.log.BaseLogger;
 import cn.yellowgg.service.UserService;
 import cn.yellowgg.utils.DateTimeUtils;
 import org.springframework.beans.factory.InitializingBean;
@@ -37,37 +38,30 @@ public class InitDataListener implements InitializingBean, ServletContextAware {
         /*这里要读取的是男女的名字，漂浮文字还有恋爱日期。*/
         /*按理说，如果是面向群体的话，一开始访问的时候，应该不显示与用户相关的信息，等它登录了再读取这个用户的。
         但是，我这里是面向自己的，所以我直接就读取我自己账户的信息就行了*/
-
         // 获取配置信息
         User user = null;
         try {
             user = userService.findUserById("988a6718538e11e99b5f10c37b1e9938");
+            if (user != null) {
+                // 装载到application,这样就能在页面中使用了
+                servletContext.setAttribute("boyname", user.getBoyname());
+                servletContext.setAttribute("girlname", user.getGirlname());
+                servletContext.setAttribute("floatcontent", user.getFloatcontent());
+                //格式化两个日期
+                String loveday = DateTimeUtils.YyyyMmDdFormat(user.getLoveday());
+                String nowDay = DateTimeUtils.YyyyMmDdFormat(new Date());
+                LoveDate loveDate = DateTimeUtils.CalculateTheUseYaers(loveday, nowDay);
+                servletContext.setAttribute("loveYear", loveDate.getYear());
+                servletContext.setAttribute("loveMonth", loveDate.getMonth());
+                servletContext.setAttribute("loveDay", loveDate.getDay());
+            }
         } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        if (user != null) {
-            // 装载到application,这样就能在页面中使用了
-            servletContext.setAttribute("boyname", user.getBoyname());
-            servletContext.setAttribute("girlname", user.getGirlname());
-            servletContext.setAttribute("floatcontent", user.getFloatcontent());
-
-            //格式化两个日期
-            String loveday = DateTimeUtils.YyyyMmDdFormat(user.getLoveday());
-            String nowDay = DateTimeUtils.YyyyMmDdFormat(new Date());
-
-
-            LoveDate loveDate = DateTimeUtils.CalculateTheUseYaers(loveday, nowDay);
-            servletContext.setAttribute("loveYear", loveDate.getYear());
-            servletContext.setAttribute("loveMonth", loveDate.getMonth());
-            servletContext.setAttribute("loveDay", loveDate.getDay());
-
+            BaseLogger.ERROR_LOGGER.error("项目初始化日期失败", e);
         }
     }
 
 
     @Override
     public void afterPropertiesSet() throws Exception {
-
     }
 }

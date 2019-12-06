@@ -16,5 +16,4 @@ public interface UserMapper {
     int updateSetting(User user) throws Exception;
 
     User findUser(User user) throws Exception;
-
 }

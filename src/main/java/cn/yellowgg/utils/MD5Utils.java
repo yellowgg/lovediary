@@ -1,5 +1,6 @@
 package cn.yellowgg.utils;
 
+import cn.yellowgg.log.BaseLogger;
 import sun.misc.BASE64Encoder;
 
 import java.security.MessageDigest;
@@ -57,10 +58,8 @@ public class MD5Utils {
                 md5 = md5.toUpperCase();
             }
         } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("md5加密抛出异常！");
+            BaseLogger.ERROR_LOGGER.error("md5加密抛出异常！", e);
         }
-
         return md5;
     }
 

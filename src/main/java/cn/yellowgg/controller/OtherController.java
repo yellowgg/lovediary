@@ -41,5 +41,4 @@ public class OtherController {
     public String error() {
         return "error";
     }
-
 }

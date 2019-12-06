@@ -17,5 +17,4 @@ public interface CategoryMapper {
     String findCateIdByName(Category category) throws Exception;
 
     int addNewCate(Category category) throws Exception;
-
 }

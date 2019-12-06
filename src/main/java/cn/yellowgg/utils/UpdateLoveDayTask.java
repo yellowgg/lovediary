@@ -2,6 +2,7 @@ package cn.yellowgg.utils;
 
 import cn.yellowgg.entity.LoveDate;
 import cn.yellowgg.entity.User;
+import cn.yellowgg.log.BaseLogger;
 import cn.yellowgg.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -29,21 +30,17 @@ public class UpdateLoveDayTask {
             //获取servletContext
             WebApplicationContext webApplicationContext = ContextLoader.getCurrentWebApplicationContext();
             ServletContext servletContext = webApplicationContext.getServletContext();
-
             User currentUser = userService.findUserById("988a6718538e11e99b5f10c37b1e9938");
-
             //计算时间
             String loveday = DateTimeUtils.YyyyMmDdFormat(currentUser.getLoveday());
             String nowDay = DateTimeUtils.YyyyMmDdFormat(new Date());
-
             //放回application
             LoveDate loveDate = DateTimeUtils.CalculateTheUseYaers(loveday, nowDay);
             servletContext.setAttribute("loveYear", loveDate.getYear());
             servletContext.setAttribute("loveMonth", loveDate.getMonth());
             servletContext.setAttribute("loveDay", loveDate.getDay());
-
         } catch (Exception e) {
-            e.printStackTrace();
+            BaseLogger.ERROR_LOGGER.error("每隔六小时更新相爱时长出现错误", e);
         }
     }
 }

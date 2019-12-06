@@ -30,7 +30,6 @@ public class LoginInterceptor implements HandlerInterceptor {
         HttpSession session = httpServletRequest.getSession();
         //获取请求地址
         String uri = httpServletRequest.getRequestURI();
-
         //如果已经登录，放行
         if (session.getAttribute("crrentUser") != null) {
             return true;
@@ -62,12 +61,10 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest httpServletRequest,
                            HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
-
     }
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest,
                                 HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-
     }
 }

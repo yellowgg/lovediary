@@ -11,12 +11,10 @@ public interface DiaryMapper {
 
     PageBean<Diary> findAllByCate(Category category) throws Exception;
 
-    List<Diary> findAllByCatePage(@Param("startIndex") Integer startIndex,
-                                  @Param("pageSize") Integer pageSize,
+    List<Diary> findAllByCatePage(@Param("startIndex") Integer startIndex, @Param("pageSize") Integer pageSize,
                                   @Param("category") Category category) throws Exception;
 
-    List<Diary> findAllByContentPage(@Param("startIndex") Integer startIndex,
-                                     @Param("pageSize") Integer pageSize,
+    List<Diary> findAllByContentPage(@Param("startIndex") Integer startIndex, @Param("pageSize") Integer pageSize,
                                      @Param("diary") Diary diary) throws Exception;
 
     Diary findById(Diary diary) throws Exception;
@@ -40,5 +38,4 @@ public interface DiaryMapper {
     int editDiary(Diary diary) throws Exception;
 
     int getCountOfSearchKey(Diary diary) throws Exception;
-
 }
