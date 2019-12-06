@@ -39,7 +39,6 @@ public class UserController {
         return "login";
     }
 
-
     /**
      * 跳转到设置界面
      */
@@ -54,10 +53,14 @@ public class UserController {
      */
     @RequestMapping(value = "/getSetting", method = RequestMethod.POST)
     public @ResponseBody
-    User getSetting() {
+    User getSetting(HttpServletRequest request) {
         try {
+            User crrentUser = (User) request.getSession().getAttribute("crrentUser");
+            if (crrentUser == null) {
+                return new User("id", "session没有User", "牛郎", "织女");
+            }
             //获取user
-            User user = userService.findUserById("988a6718538e11e99b5f10c37b1e9938");
+            User user = userService.findUserById(crrentUser.getUserid());
             if (user != null) {
                 //去掉敏感信息
                 user.setUserid("路飞");
@@ -126,8 +129,6 @@ public class UserController {
     @RequestMapping("/updateSetting")
     public void updateSetting(@DateTimeFormat(pattern = "yyyy-MM-dd") Date lovedate, HttpServletResponse response,
                               HttpServletRequest request, User user) {
-        //更新user
-        user.setUserid("988a6718538e11e99b5f10c37b1e9938");
         /*从前台传过来的时间是Mon Apr 16 00:00:00 CST 2018
          * 然后存进数据库会少一天 数据库中为2018-4-15
          * 解决办法：

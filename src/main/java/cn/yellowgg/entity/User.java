@@ -26,4 +26,14 @@ public class User {
     private String boyname;
 
     private String girlname;
+
+    public User() {
+    }
+
+    public User(String userid, String floatcontent, String boyname, String girlname) {
+        this.userid = userid;
+        this.floatcontent = floatcontent;
+        this.boyname = boyname;
+        this.girlname = girlname;
+    }
 }

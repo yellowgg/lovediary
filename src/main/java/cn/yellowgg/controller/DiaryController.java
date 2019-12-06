@@ -50,14 +50,12 @@ public class DiaryController {
                 return "diary_List";
             }
             //能走到这里，不出错肯定是有日记的。根据分类查询分页日记
-            PageBean<Diary> diaryList =
-                    diaryService.findAllByCatePage(pageNum, pageSize, categoryTop);
+            PageBean<Diary> diaryList = diaryService.findAllByCatePage(pageNum, pageSize, categoryTop);
             //传回前台
             model.addAttribute("diariesOfTopCate", diaryList);
             //顺便也把分类id传过去，因为翻页要用到
             model.addAttribute("typeId", categoryTop.getCategoryid());
             return "diary_List";
-
         } catch (Exception e) {
             BaseLogger.ERROR_LOGGER.error("最新分类下的日志请求错误", e);
             //跳转到错误页面
