@@ -136,6 +136,8 @@ public class UserController {
          * com.mysql.jdbc.Driver无需配置时区，但是这里需要配置一下。
          * 链接：https://blog.csdn.net/qq442270636/article/details/81054263
          * */
+        User crrentUser = (User) request.getSession().getAttribute("crrentUser");
+        user.setUserid(crrentUser.getUserid());
         user.setLoveday(lovedate);
         try {
             if (userService.updateSetting(user) > 0) {
@@ -152,6 +154,7 @@ public class UserController {
                 request.getServletContext().setAttribute("loveDay", loveDate.getDay());
                 response.sendRedirect(request.getContextPath() + "/user/setting");
             }
+            response.sendRedirect(request.getContextPath() + "/other/error");
         } catch (Exception e) {
             BaseLogger.ERROR_LOGGER.error("更新设置项失败", e);
             //跳转到错误页面
