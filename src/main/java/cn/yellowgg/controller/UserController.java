@@ -153,6 +153,7 @@ public class UserController {
                 request.getServletContext().setAttribute("loveMonth", loveDate.getMonth());
                 request.getServletContext().setAttribute("loveDay", loveDate.getDay());
                 response.sendRedirect(request.getContextPath() + "/user/setting");
+                return;
             }
             response.sendRedirect(request.getContextPath() + "/other/error");
         } catch (Exception e) {
