@@ -150,13 +150,8 @@
                         <%@include file="diaryRight.jsp" %>
                     </div>
                     <%--页脚--%>
-                    <div class="col-md-12" align="center" style="border-top:
-                    #d9edf7 solid 1px;padding-top: 5%">
-                        <p>Copyright@2019 大王派我来寻山 桂ICP备18009250号-1</p>
-                        <p>技术支持：yellowgg
-                            <a href="https://github.com/yellowgg"
-                               target="_blank">https://github.com/yellowgg</a>
-                        </p>
+                    <div class="col-md-12" align="center" style="border-top:#d9edf7 solid 1px;padding-top: 5%">
+                         <%@include file="footer.jsp" %>
                     </div>
                     <%--返回顶部,抽取静态包含--%>
                     <%@include file="goTop.jsp" %>

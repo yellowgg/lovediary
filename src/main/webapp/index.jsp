@@ -108,13 +108,8 @@
                         </div>
                     </div>
                     <%--页脚--%>
-                    <div class="col-md-12" align="center"
-                         style="padding-top: 15%">
-                        <p>Copyright@2019 大王派我来寻山 桂ICP备18009250号-1</p>
-                        <p>技术支持：yellowgg
-                            <a href="https://github.com/yellowgg"
-                               target="_blank">https://github.com/yellowgg</a>
-                        </p>
+                    <div class="col-md-12" align="center" style="padding-top: 15%">
+                        <%@include file="jsp/footer.jsp" %>
                     </div>
                     <%--导航按钮--%>
                     <div class="main clearfix">
