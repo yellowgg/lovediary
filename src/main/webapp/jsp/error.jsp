@@ -1,11 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-    String basePath = request.getScheme() + "://"
-            + request.getServerName() + ":" + request.getServerPort()
-            + request.getContextPath();
-%>
+<%@include file="include/publicVariables.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +30,7 @@
 <div style="width: 100%;height: 100%;position:fixed">
     <div id="st-container" class="st-container">
         <div class="st-pusher">
-            <%@ include file="navigation.jsp" %>
+            <%@ include file="include/navigation.jsp" %>
             <div class="st-content"
                  style="background: url('<%=basePath%>/images/bg.jpg') no-repeat center 0px;background-position: center 0;background-size: cover;height:100%">
                 <div class="st-content-inner">
@@ -43,7 +39,7 @@
                     <div class="col-md-4">
                         <div class="bridecol">
                             <div class="bridepic">
-                                <a href="http://yellowgg.cn:8080/HT/">
+                                <a href="<%=girlUrl %>">
                                     <img src="<%=basePath%>/images/girl.jpg"
                                          alt="bride"
                                          width="160"
@@ -59,7 +55,7 @@
                     <div class="col-md-4">
                         <div class="groomcol">
                             <div class="groompic">
-                                <a href="http://yellowgg.cn:8080/HG/">
+                                <a href="<%=boyUrl %>">
                                     <img src="<%=basePath%>/images/boy.jpg"
                                          alt="groom"
                                          width="160"
@@ -78,14 +74,14 @@
                     </div>
                     <%--页脚--%>
                     <div class="col-md-12" align="center" style="padding-top: 24.4%">
-                         <%@include file="footer.jsp" %>
+                        <%@include file="include/footer.jsp" %>
                     </div>
                     <%--导航按钮--%>
                     <div class="main clearfix">
                         <div id="st-trigger-effects" class="column">
                             <button data-effect="st-effect-6"
                                     style="top:3px;left:3px;position:fixed">
-                                点我
+                                <%=NavigationButton %>
                             </button>
                         </div>
                     </div>
@@ -95,10 +91,6 @@
     </div>
 </div>
 <script type="text/javascript">
-    <%
-        // 先获取内容
-        String floatContent = (String) application.getAttribute("floatcontent");
-    %>
     var t = '<%=floatContent%>';
     t = t.split("");
     <%/* 然后fontFloat.js就会使用t*/%>
