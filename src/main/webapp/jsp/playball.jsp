@@ -1,12 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@include file="include/publicVariables.jsp" %>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta http-equiv="Content-Type" content="text/html; charset = UTF-8"/>
     <title>你打球好像蔡徐坤</title>

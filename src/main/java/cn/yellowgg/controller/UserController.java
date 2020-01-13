@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -126,9 +127,9 @@ public class UserController {
      *
      * @param lovedate 前台传过来的是yyyy-mm-dd格式 所以单独弄一个date来接收，因为User的属性接收不了
      */
-    @RequestMapping("/updateSetting")
+    @RequestMapping(value = "/updateSetting", method = RequestMethod.POST)
     public void updateSetting(@DateTimeFormat(pattern = "yyyy-MM-dd") Date lovedate, HttpServletResponse response,
-                              HttpServletRequest request, User user) {
+                              HttpServletRequest request, User user, MultipartFile file) {
         /*从前台传过来的时间是Mon Apr 16 00:00:00 CST 2018
          * 然后存进数据库会少一天 数据库中为2018-4-15
          * 解决办法：
