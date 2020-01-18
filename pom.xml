@@ -3,18 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <!--自动生成-->
     <groupId>cn.yellowgg</groupId>
     <artifactId>lovediary</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
-
     <!--自动生成lovediary-->
     <name>lovediary Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
-
     <!--自动生成-->
     <build>
         <!--lovediary-->
@@ -53,7 +50,6 @@
             </plugins>
         </pluginManagement>
     </build>
-
     <!--这里是配置变量以便后面使用-->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -70,7 +66,6 @@
         <slf4j.version>1.7.18</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
     </properties>
-
     <!--依赖管理-->
     <!--lombok、ssm相关、日志、jubit4、jstl、c3p0、json、mysql驱动-->
     <dependencies>
@@ -227,6 +222,4 @@
             <version>2.9.10.1</version>
         </dependency>
     </dependencies>
-
-
 </project>
