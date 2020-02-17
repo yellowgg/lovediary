@@ -10,9 +10,8 @@
         </form>
     </div>
     <%--日期分类--%>
-    <div class="list-group" style="width: 100%" id="c_ul">
-        <a href="javascript:void(0);" class="list-group-item disabled"> 时间分类 </a>
-    </div>
+    <select name="yearSelect" id="yearSelect"></select>
+    <div class="list-group" style="width: 100%" id="c_ul"></div>
 </div>
 <%--这个变量是为了给纯js文件使用的，因为js文件不能直接引用，放在公共变量那个文件又会导致页面元素错乱--%>
 <input id="pageContextOfjs" type="hidden" value="${pageContext.request.contextPath}"/>

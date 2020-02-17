@@ -220,5 +220,11 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.10.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.directory.studio/org.apache.commons.collections -->
+        <dependency>
+            <groupId>org.apache.directory.studio</groupId>
+            <artifactId>org.apache.commons.collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
     </dependencies>
 </project>

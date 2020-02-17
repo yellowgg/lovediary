@@ -4,6 +4,19 @@
 
 /*存在看板娘的地方肯定会请求日志分类*/
 $(document).ready(function () {
+    var allData;
+
+    function loadingMonth(months) {
+        $("#c_ul").empty();
+        for (var i = 0; i < months.length; i++) {
+            var typeId = months[i].categoryid;
+            var typeCount = months[i].count;
+            var typeName = months[i].categoryname;
+            $("#c_ul").append("<a " + "href='" + $("#pageContextOfjs").val() + "/diary/findPage/1&" + typeId +
+                "' class='list-group-item'><span class='badge' style='background-color: #1380ab;'>" + typeCount + "</span>" + typeName + "</a>")
+        }
+    }
+
     $(function () {
         //发送ajax 读取日记月份分类
         $.ajax({
@@ -12,19 +25,24 @@ $(document).ready(function () {
             contentType: 'application/json;charset=utf-8',
             data: {"": ""},//数据格式是json串
             success: function (data) {
-                //挂载到右边，遍历json列表，获取每一个分类，包装成li标签，插入到ul内部
-                for (var i = 0; i < data.length; i++) {
-                    var typeId = data[i].categoryid;
-                    var typeCount = data[i].count;
-                    var typeName = data[i].categoryname;
-                    $("#c_ul").append("<a " +
-                        "href='" + $("#pageContextOfjs").val() + "/diary/findPage/1&" + typeId +
-                        "' class='list-group-item'><span class='badge' style='background-color: #1380ab;'>" +
-                        typeCount + "</span>" + typeName + "</a>")
+                allData = data;
+                // 后台的map是年份降序的，传过来却依然是年份降序
+                var years = Object.keys(data).sort(function (a, b) {
+                    return b - a;
+                });
+                for (var i = 0; i < years.length; i++) {
+                    $("#yearSelect").append("<option value='" + years[i] + "'>" + years[i] + "年" + "</option>");
                 }
+                // 挂载下拉框中的年份对应月份
+                loadingMonth(allData[$("#yearSelect").val()])
             }
         })
-    })
+    });
+    $(function () {
+        $('#yearSelect').change(function () {
+            loadingMonth(allData[$("#yearSelect").val()])
+        });
+    });
 })
 
 L2Dwidget.init({

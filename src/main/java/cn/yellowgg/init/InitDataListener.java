@@ -39,9 +39,8 @@ public class InitDataListener implements InitializingBean, ServletContextAware {
         /*按理说，如果是面向群体的话，一开始访问的时候，应该不显示与用户相关的信息，等它登录了再读取这个用户的。
         但是，我这里是面向自己的，所以我直接就读取我自己账户的信息就行了*/
         // 获取配置信息
-        User user = null;
         try {
-            user = userService.findUserById("988a6718538e11e99b5f10c37b1e9938");
+            User user = userService.findUserById("988a6718538e11e99b5f10c37b1e9938");
             if (user != null) {
                 // 装载到application,这样就能在页面中使用了
                 servletContext.setAttribute("boyname", user.getBoyname());
