@@ -40,13 +40,7 @@
                         <%@include file="include/footer.jsp" %>
                     </div>
                     <%--导航按钮--%>
-                    <div class="main clearfix">
-                        <div id="st-trigger-effects" class="column">
-                            <button data-effect="st-effect-6" style="top:3px;left:3px;position:fixed">
-                                <%=res.getString("NavigationButton") %>
-                            </button>
-                        </div>
-                    </div>
+                    <%@ include file="include/navigationButton.jsp" %>
                 </div>
             </div>
         </div>

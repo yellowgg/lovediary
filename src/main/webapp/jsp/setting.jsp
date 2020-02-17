@@ -105,7 +105,6 @@
                                                data-dismiss="fileinput">移除</a>
                                         </div>
                                     </div>
-<%--
                                     <div class="fileinput fileinput-new" data-provides="fileinput" id="boyPhoto"
                                          style="margin-left: 10%;">
                                         <div class="fileinput-new thumbnail"
@@ -126,7 +125,6 @@
                                                data-dismiss="fileinput">移除</a>
                                         </div>
                                     </div>
---%>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-lg"
                                         style="background-color: #1380ab;margin: 10px 45%"> 保存
@@ -143,14 +141,7 @@
                     <%--返回顶部,抽取静态包含--%>
                     <%@include file="include/goTop.jsp" %>
                     <%--导航按钮--%>
-                    <div class="main clearfix">
-                        <div id="st-trigger-effects" class="column">
-                            <button data-effect="st-effect-6"
-                                    style="top:3px;left:3px;position:fixed">
-                             <%=res.getString("NavigationButton") %>
-                            </button>
-                        </div>
-                    </div>
+                    <%@ include file="include/navigationButton.jsp" %>
                 </div>
             </div>
         </div>
@@ -169,7 +160,7 @@
         minView: 2
     });
 
-     var t = '<%=floatContent%>'.split("");
+    var t = '<%=floatContent%>'.split("");
     <%/* 然后fontFloat.js就会使用t*/%>
 
     function toAddDiary() {
