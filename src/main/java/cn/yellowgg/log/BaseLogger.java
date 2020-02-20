@@ -9,6 +9,5 @@ import org.apache.log4j.Logger;
  * @Date: Created in 2019/12/6 15:45
  */
 public interface BaseLogger {
-    Logger LOGGER_ACCESS = Logger.getLogger("D");
-    Logger ERROR_LOGGER = Logger.getLogger("E");
+    Logger ERROR_LOGGER = Logger.getLogger("ERROR");
 }
