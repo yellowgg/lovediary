@@ -5,7 +5,7 @@
     <div class="bridecol">
         <div class="bridepic">
             <a href="<%=res.getString("girlUrl") %>">
-                <img src="<%=basePath%>/images/girl.jpg" alt="bride" width="160" height="160">
+                <img src="/img/girl.jpg" alt="bride" width="160" height="160">
             </a>
         </div>
         <div class="brideinfo">
@@ -19,7 +19,7 @@
     <div class="groomcol">
         <div class="groompic">
             <a href="<%=res.getString("boyUrl") %>">
-                <img src="<%=basePath%>/images/boy.jpg" alt="groom" width="160" height="160">
+                <img src="<%=imgPath%>/boy.jpg" alt="groom" width="160" height="160">
             </a>
         </div>
         <div class="groominfo">

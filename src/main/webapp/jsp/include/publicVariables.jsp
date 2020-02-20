@@ -5,5 +5,7 @@
 %>
 <%
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath();
+    // 虚拟目录 localhost:8080/img
+    String imgPath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + "/img";
     String floatContent = (String) application.getAttribute("floatcontent");
 %>
