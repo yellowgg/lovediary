@@ -11,7 +11,7 @@ import java.io.File;
  */
 public class FileUtils {
 
-    private static String HEADVIRTUALDIRECTORY = "C:\\Users\\yellowgg\\IdeaProjects\\lovediary\\src\\main\\webapp\\images\\";
+    private static String HEADVIRTUALDIRECTORY = "一个真实的物理路径";
 
     /**
      * 替换头像专用
