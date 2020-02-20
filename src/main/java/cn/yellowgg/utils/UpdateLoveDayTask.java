@@ -34,8 +34,8 @@ public class UpdateLoveDayTask {
             //计算时间
             String loveday = DateTimeUtils.YyyyMmDdFormat(currentUser.getLoveday());
             String nowDay = DateTimeUtils.YyyyMmDdFormat(new Date());
-            //放回application
             LoveDate loveDate = DateTimeUtils.CalculateTheUseYaers(loveday, nowDay);
+            //放回application
             servletContext.setAttribute("loveYear", loveDate.getYear());
             servletContext.setAttribute("loveMonth", loveDate.getMonth());
             servletContext.setAttribute("loveDay", loveDate.getDay());
