@@ -14,7 +14,7 @@ import javax.servlet.ServletContext;
 import java.util.Date;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:此类是为了每天定时更新相爱时长的
  * @Date: Created in 19-4-6 上午9:48
  */

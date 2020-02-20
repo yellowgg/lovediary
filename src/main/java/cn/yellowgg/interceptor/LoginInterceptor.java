@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:登录拦截器
  * @Date: Created in 19-4-3 下午3:07
  */

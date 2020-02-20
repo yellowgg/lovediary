@@ -4,7 +4,7 @@ import cn.yellowgg.entity.User;
 import org.springframework.stereotype.Repository;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:
  * @Date: Created in 19-4-1 下午3:47
  */

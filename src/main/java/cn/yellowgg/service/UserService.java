@@ -3,7 +3,7 @@ package cn.yellowgg.service;
 import cn.yellowgg.entity.User;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:
  * @Date: Created in 19-3-31 下午7:34
  */

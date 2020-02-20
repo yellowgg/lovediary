@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:这个类是专门用来存储pojo的分页
  * @Date: Created in 19-4-3 下午5:21
  */

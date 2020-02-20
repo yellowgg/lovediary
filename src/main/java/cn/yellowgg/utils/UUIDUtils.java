@@ -3,7 +3,7 @@ package cn.yellowgg.utils;
 import java.util.UUID;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:
  * @Date: Created in 19-4-3 下午9:28
  */

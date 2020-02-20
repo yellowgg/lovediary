@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description: 用户，拥有一些全局属性
  * @Date: Created in 19-3-31 下午7:24
  */

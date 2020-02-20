@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:其它功能的控制器
  * @Date: Created in 19-4-1 下午10:14
  */

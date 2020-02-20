@@ -13,7 +13,7 @@ import javax.servlet.ServletContext;
 import java.util.Date;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description: 为什么有这个类，需求：我想在启动项目时，就在数据库中读取数据加载到web应用
  * 这样的话，我们可以设想在拦截器中读取出来，但是，如果在拦截器中读取，就只能用JDBC。
  * 不能用service层跟dao层，因为执行到拦截器的时候，spring容器还没有初始化其它类。

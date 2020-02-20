@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description: 日记分类，其实算是时间分类
  * @Date: Created in 19-3-31 下午7:23
  */

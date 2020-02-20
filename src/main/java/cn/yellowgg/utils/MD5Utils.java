@@ -6,7 +6,7 @@ import sun.misc.BASE64Encoder;
 import java.security.MessageDigest;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:MD5工具类
  * @Date: Created in 19-4-3 上午10:54
  */

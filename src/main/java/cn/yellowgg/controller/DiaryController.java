@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:日记控制器
  * @Date: Created in 19-3-31 下午7:34
  */

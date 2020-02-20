@@ -5,7 +5,7 @@ import cn.yellowgg.entity.Diary;
 import cn.yellowgg.entity.PageBean;
 
 /**
- * @Author:黄广
+ * @Author:yellowgg
  * @Description:
  * @Date: Created in 19-3-31 下午7:35
  */
