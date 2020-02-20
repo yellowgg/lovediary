@@ -5,6 +5,7 @@ import cn.yellowgg.entity.User;
 import cn.yellowgg.log.BaseLogger;
 import cn.yellowgg.service.UserService;
 import cn.yellowgg.utils.DateTimeUtils;
+import cn.yellowgg.utils.FileUtils;
 import cn.yellowgg.utils.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -128,8 +129,9 @@ public class UserController {
      * @param lovedate 前台传过来的是yyyy-mm-dd格式 所以单独弄一个date来接收，因为User的属性接收不了
      */
     @RequestMapping(value = "/updateSetting", method = RequestMethod.POST)
+    @ResponseBody
     public void updateSetting(@DateTimeFormat(pattern = "yyyy-MM-dd") Date lovedate, HttpServletResponse response,
-                              HttpServletRequest request, User user, MultipartFile file) {
+                              HttpServletRequest request, User user, MultipartFile[] files) {
         /*从前台传过来的时间是Mon Apr 16 00:00:00 CST 2018
          * 然后存进数据库会少一天 数据库中为2018-4-15
          * 解决办法：
@@ -153,6 +155,11 @@ public class UserController {
                 request.getServletContext().setAttribute("loveYear", loveDate.getYear());
                 request.getServletContext().setAttribute("loveMonth", loveDate.getMonth());
                 request.getServletContext().setAttribute("loveDay", loveDate.getDay());
+                // 头像替换
+                String[] fileNames = {"girl.jpg", "boy.jpg"};
+                for (int i = 0; i < files.length; i++) {
+                    FileUtils.saveHeadPicFile(files[i], fileNames[i]);
+                }
                 response.sendRedirect(request.getContextPath() + "/user/setting");
                 return;
             }

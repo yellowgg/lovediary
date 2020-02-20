@@ -90,7 +90,7 @@
                                         <div class="fileinput-new thumbnail"
                                              style="width: 200px;height: auto;max-height:150px;">
                                             <img id="girlImg" style="width: 100%;height: auto;max-height: 140px;"
-                                                 src="<%=basePath%>/images/girl.jpg"/>
+                                                 src="<%=imgPath%>/girl.jpg"/>
                                         </div>
                                         <div class="fileinput-preview fileinput-exists thumbnail"
                                              style="max-width: 200px; max-height: 150px;"></div>
@@ -98,8 +98,7 @@
                                         <span class="btn btn-primary btn-file">
                                             <span class="fileinput-new">选择文件</span>
                                             <span class="fileinput-exists">换一张</span>
-                                            <input type="file" name="girlPic" id="girlImgFile"
-                                                   accept="image/gif,image/jpeg,image/x-png"/>
+                                            <input type="file" name="files" id="girlImgFile" accept="image/jpg"/>
                                         </span>
                                             <a href="javascript:;" class="btn btn-warning fileinput-exists"
                                                data-dismiss="fileinput">移除</a>
@@ -110,7 +109,7 @@
                                         <div class="fileinput-new thumbnail"
                                              style="width: 200px;height: auto;max-height:150px;">
                                             <img id="boyImg" style="width: 100%;height: auto;max-height: 140px;"
-                                                 src="<%=basePath%>/images/boy.jpg"/>
+                                                 src="<%=imgPath%>/boy.jpg"/>
                                         </div>
                                         <div class="fileinput-preview fileinput-exists thumbnail"
                                              style="max-width: 200px; max-height: 150px;"></div>
@@ -118,8 +117,7 @@
                                         <span class="btn btn-primary btn-file">
                                             <span class="fileinput-new">选择文件</span>
                                             <span class="fileinput-exists">换一张</span>
-                                            <input type="file" name="boyPic" id="boyImgFile"
-                                                   accept="image/gif,image/jpeg,image/x-png"/>
+                                            <input type="file" name="files" id="boyImgFile" accept="image/jpg"/>
                                         </span>
                                             <a href="javascript:;" class="btn btn-warning fileinput-exists"
                                                data-dismiss="fileinput">移除</a>
