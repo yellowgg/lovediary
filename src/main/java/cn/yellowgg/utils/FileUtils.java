@@ -11,7 +11,8 @@ import java.io.File;
  */
 public class FileUtils {
 
-    private static String HEADVIRTUALDIRECTORY = "一个真实的物理路径";
+    // TODO 不用webapp/imges下的了 直接用虚拟目录里面的，所以发布的时候记得先在虚拟目录放好两张图
+    private static String HEADVIRTUALDIRECTORY = "/opt/tomcat9/loveDiaryHeadImg/";
 
     /**
      * 替换头像专用
