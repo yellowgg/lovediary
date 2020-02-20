@@ -163,7 +163,6 @@ public class UserController {
                 response.sendRedirect(request.getContextPath() + "/user/setting");
                 return;
             }
-            response.sendRedirect(request.getContextPath() + "/other/error");
         } catch (Exception e) {
             BaseLogger.ERROR_LOGGER.error("更新设置项失败", e);
             //跳转到错误页面
