@@ -11,7 +11,7 @@ import java.io.File;
  */
 public class FileUtils {
 
-    // TODO 不用webapp/imges下的了 直接用虚拟目录里面的，所以发布的时候记得先在虚拟目录放好两张图
+    // TODO yellowgg 不用webapp/imges下的了 直接用虚拟目录里面的，所以发布的时候记得先在虚拟目录放好两张图
     private static String HEADVIRTUALDIRECTORY = "/opt/tomcat9/loveDiaryHeadImg/";
 
     /**
