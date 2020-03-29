@@ -5,7 +5,7 @@
     <div class="bridecol">
         <div class="bridepic">
             <a href="<%=res.getString("girlUrl") %>">
-                <img src="/img/girl.jpg" alt="bride" width="160" height="160">
+                <img src="<%=imgPath%>/girl.jpg" alt="bride" width="160" height="160">
             </a>
         </div>
         <div class="brideinfo">
